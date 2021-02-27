@@ -23,7 +23,7 @@ jobs:
 #Scan Web Application Code    
     - name: ShiftLeft SourceGuard Web Application Scan
       run: |
-         wget https://shiftleft-prod.s3.amazonaws.com/blades/shiftleft/bin/linux/amd64/0.0.24/shiftleft -O shiftleft/shiftleft
+         wget https://shiftleft-prod.s3.amazonaws.com/blades/shiftleft/bin/linux/amd64/0.0.24/shiftleft
          chmod +x ./shiftleft
          shiftleft code-scan -s .
       continue-on-error: true
