@@ -27,3 +27,14 @@ jobs:
          chmod +x ./shiftleft
          ./shiftleft code-scan -s .
       continue-on-error: true
+      
+     #Build Container 
+    - name: Build Docker Container
+      run: |
+         docker build . -t vulnado
+    #Scan Container     
+    - name: Shift Left Container Scan
+      run: |
+        docker save vulnado -o vulnado.tar
+        ./shiftleft image-scan -t 1800 -i ./vulnado.tar
+      continue-on-error: true         
