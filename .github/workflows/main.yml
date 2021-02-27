@@ -25,5 +25,5 @@ jobs:
       run: |
          wget https://shiftleft-prod.s3.amazonaws.com/blades/shiftleft/bin/linux/amd64/0.0.24/shiftleft
          chmod +x ./shiftleft
-         shiftleft code-scan -s .
+         ./shiftleft code-scan -s .
       continue-on-error: true
